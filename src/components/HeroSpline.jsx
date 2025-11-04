@@ -2,7 +2,7 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { Rocket, Shield, Map } from 'lucide-react';
 
-export default function HeroSpline() {
+export default function HeroSpline({ onStartExploring, onSeeNearby }) {
   return (
     <section className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] overflow-hidden bg-black">
       {/* 3D Cover */}
@@ -37,11 +37,11 @@ export default function HeroSpline() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button className="inline-flex items-center gap-2 rounded-lg bg-white text-black px-5 py-3 font-medium hover:bg-orange-100 transition">
+            <button onClick={onStartExploring} className="inline-flex items-center gap-2 rounded-lg bg-white text-black px-5 py-3 font-medium hover:bg-orange-100 transition">
               <Rocket className="h-4 w-4" />
               Start Exploring
             </button>
-            <button className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 text-white px-5 py-3 font-medium hover:bg-white/20 transition">
+            <button onClick={onSeeNearby} className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 text-white px-5 py-3 font-medium hover:bg-white/20 transition">
               <Map className="h-4 w-4" />
               See Nearby
             </button>
